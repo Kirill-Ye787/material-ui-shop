@@ -1,0 +1,8 @@
+@use '../../styles/variables' as v;
+.gallery { min-width: 0; }
+.mainImage { position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--border); background: #edf0e8; border-radius: 20px; overflow: hidden; aspect-ratio: 6/5; img { width: 100%; height: 100%; object-fit: contain; transition: transform .45s ease; } &:hover img { transform: scale(1.12); } }
+.zoom { position: absolute; bottom: 16px; right: 16px; background: #fff; color: #20352c; border-radius: 50%; width: 42px; height: 42px; display: grid; place-items: center; }
+.thumbnails { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 14px; }
+.thumbnail { padding: 0; border: 2px solid transparent; border-radius: 12px; overflow: hidden; background: #edf0e8; opacity: .75; transition: opacity .2s, border-color .2s; img { width: 100%; } &:hover { opacity: 1; } &.active { border-color: var(--primary); opacity: 1; } }
+.lightboxImage { max-height: 65vh; width: 100%; object-fit: contain; border-radius: 12px; }
+@media (max-width: v.$tablet - 1px) { .thumbnails { gap: 8px; } }

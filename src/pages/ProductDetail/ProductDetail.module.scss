@@ -1,0 +1,13 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+.container { @include m.container; }
+.topSection { display: grid; grid-template-columns: 1.05fr 1fr; align-items: start; gap: 52px; }
+.info { min-width: 0; padding: 8px 0; h1 { font-size: clamp(25px, 3vw, 36px); line-height: 1.2; letter-spacing: -.8px; font-weight: 750; margin: 14px 0 10px; } }
+.brand { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); }
+.sku, .muted { color: var(--muted); font-size: 12px; }
+.price { display: flex; flex-direction: column; gap: 4px; margin-top: 20px; del { font-size: 14px; color: var(--muted); } strong { font-size: 34px; letter-spacing: -1px; } }
+.description { color: var(--muted); line-height: 1.8; font-size: 14px; }
+.delivery { display: flex; align-items: center; gap: 9px; margin-top: 22px; padding: 14px 0; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+.features { line-height: 2; padding-left: 22px; font-size: 14px; }
+@media (max-width: v.$desktop - 1px) { .topSection { grid-template-columns: 1fr; gap: 28px; } }
+@media (max-width: v.$tablet - 1px) { .info h1 { font-size: 27px; } }
